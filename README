@@ -1,0 +1,10 @@
+Bohuzel zdejsi dockerfile a compose.yaml neni dokoncen, alternativni cesta:
+
+Tvorba kontejneru postgres:
+docker run --name praceSPersonPostgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+
+Image WildFly:
+docker pull jboss/wildfly:23.0.2.Final
+
+run wildfly:
+docker run -d -p 8080:8080 -p 9990:9990 --name praceSPerson-wildfly jboss/wildfly:23.0.2.Final
